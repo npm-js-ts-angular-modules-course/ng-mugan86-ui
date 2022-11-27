@@ -93,6 +93,39 @@
           }
         }
       }
+    },
+    "mugan86-ui": {
+      "projectType": "library",
+      "root": "projects/mugan86-ui",
+      "sourceRoot": "projects/mugan86-ui/src",
+      "prefix": "mugan86",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/mugan86-ui/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/mugan86-ui/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/mugan86-ui/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/mugan86-ui/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
     }
   }
 }
